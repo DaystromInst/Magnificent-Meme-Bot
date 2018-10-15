@@ -2,18 +2,19 @@ import discord
 from discord.ext import commands
 import datetime
 from datetime import timedelta
+import time
 
 TOKEN = " "
 
 client = commands.Bot(command_prefix = '!') # client object
 # prefix character for issuing commands ie '!' when telling a music bot to !play
 
-daybox = 0
+day_box = time.ctime()
 
 @client.event
 async def on_ready(): # runs code in function when the bot is ready
     Day_counter = datetime.date.today() # pass the current date into a fluid variable
-    if(daybox != Day_counter) # if a day has passed
+    if(day_box != Day_counter): # if a day has passed
         # call up the script for posting the daily meme
         daybox = Day_counter # daybox now holds today's date so it can check for tomorrow
         
@@ -35,8 +36,8 @@ async def on_message(message): # when someone messages a command
     #await client.send_message(channel, "{}; {}".format(author, content))
     #sends a message with details of a deleted message
 
-@client.event
-async def 
+#@client.event
+#async def
     
     
 client.run(TOKEN) # run the bot
