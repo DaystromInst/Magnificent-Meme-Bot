@@ -6,20 +6,23 @@ import time
 
 TOKEN = " "
 
-client = commands.Bot(command_prefix = '!') # client object
+client = commands.Bot(command_prefix='!')# client object
 # prefix character for issuing commands ie '!' when telling a music bot to !play
 
-day_box = time.ctime()
+Daybox = datetime.date(2018, 10, 15)
+
 
 @client.event
-async def on_ready(): # runs code in function when the bot is ready
+async def on_ready(daybox=Daybox): # runs code in function when the bot is ready
     Day_counter = datetime.date.today() # pass the current date into a fluid variable
-    if(day_box != Day_counter): # if a day has passed
+
+    if Day_counter - daybox == timedelta(0): # if a day has passed
         # call up the script for posting the daily meme
-        daybox = Day_counter # daybox now holds today's date so it can check for tomorrow
+        daybox = datetime.date.today() # daybox now holds today's date so it can check for tomorrow
         
     print('I am ready, my dudes. ') # debug notification: bot is ready
-    
+
+
 @client.event
 async def on_message(message): # when someone messages a command
     author = message.author # returns who wrote the message as a string
