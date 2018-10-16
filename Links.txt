@@ -1,0 +1,7 @@
+Post the links you use here
+
+Reddit Python Library: https://praw.readthedocs.io/en/latest/ 
+
+urllib.request documentation: https://docs.python.org/3/library/urllib.request.html#module-urllib.request
+
+discord.py tutorial: https://www.youtube.com/watch?v=5yahh4tR0L0&list=PLW3GfRiBCHOiEkjvQj0uaUB1Q-RckYnj9
