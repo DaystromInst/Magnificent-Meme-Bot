@@ -1,7 +1,11 @@
 Post the links you use here
 
 Reddit Python Library: https://praw.readthedocs.io/en/latest/ 
+	basic tutorial: https://praw.readthedocs.io/en/latest/getting_started/quick_start.html#common-tasks
 
 urllib.request documentation: https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 
 discord.py tutorial: https://www.youtube.com/watch?v=5yahh4tR0L0&list=PLW3GfRiBCHOiEkjvQj0uaUB1Q-RckYnj9
+
+python OS library documentation: https://docs.python.org/3/library/os.html
+
