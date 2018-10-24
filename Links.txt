@@ -9,3 +9,4 @@ discord.py tutorial: https://www.youtube.com/watch?v=5yahh4tR0L0&list=PLW3GfRiBC
 
 python OS library documentation: https://docs.python.org/3/library/os.html
 
+Python ini file management documentation: https://docs.python.org/3/library/configparser.html

@@ -4,23 +4,41 @@ import datetime
 from datetime import timedelta
 import time
 import ImageGrab.py
+import configparser
 
-TOKEN = " "
+config_read = configparser.ConfigParser()
+
+TOKEN = 'NTA0Njk2Nzc3ODQ1NTA2MDc5.DrJBOg.4laYtgbGlZvuGPf8h5LLKbJxu5A'
+
+client_id = 504696777845506079
 
 client = commands.Bot(command_prefix='!')  # client object
 # prefix character for issuing commands ie '!' when telling a music bot to !play
 
-Daybox = datetime.date(2018, 10, 15)
-
 
 @client.event
-async def on_ready(daybox=Daybox):  # runs code in function when the bot is ready
+async def on_ready():  # runs code in function when the bot is ready
+    config_read.read('Configurations.ini')  # open the ini file for reading
+    config_read.sections()
+
+    if ('Time keeper' in config_read):  # if there is a section called "Time keeper" in the ini file
+        print("Hello, world!")  # debug print
+        daybox = datetime.date(config_read['Time keeper']['day_last'])
+
     Day_counter = datetime.date.today()  # pass the current date into a fluid variable
 
     if Day_counter - daybox == timedelta(0):  # if a day has passed
         # call up the script for posting the daily meme
         daybox = datetime.date.today()  # daybox now holds today's date so it can check for tomorrow
-        ImageGrab.main2()
+
+        config_read['Time keeper']['day_last'] = daybox  # reassign the day_last key with today's date
+        config_read['Time keeper']['year'] = daybox.year  # reassign with the current year
+        config_read['Time keeper']['month'] = daybox.month  # reassign with the current month
+        config_read['Time keeper']['days'] = daybox.day  # reassign with the current day
+        with open('Configurations.ini', 'w') as configfile:  # open the ini file for writing
+            config_read.write(configfile)  # save changes
+
+        ImageGrab.main2()  # time to shitpost
 
     print('I am ready, my dudes. ')  # debug notification: bot is ready
 
