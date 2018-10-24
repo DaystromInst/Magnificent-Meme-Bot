@@ -21,7 +21,7 @@ async def on_ready():  # runs code in function when the bot is ready
     config_read.read('Configurations.ini')  # open the ini file for reading
     config_read.sections()
 
-    if ('Time keeper' in config_read):  # if there is a section called "Time keeper" in the ini file
+    if ('Time keeping' in config_read):  # if there is a section called "Time keeper" in the ini file
         print("Hello, world!")  # debug print
         daybox = datetime.date(config_read['Time keeper']['day_last'])
 
@@ -31,10 +31,10 @@ async def on_ready():  # runs code in function when the bot is ready
         # call up the script for posting the daily meme
         daybox = datetime.date.today()  # daybox now holds today's date so it can check for tomorrow
 
-        config_read['Time keeper']['day_last'] = daybox  # reassign the day_last key with today's date
-        config_read['Time keeper']['year'] = daybox.year  # reassign with the current year
-        config_read['Time keeper']['month'] = daybox.month  # reassign with the current month
-        config_read['Time keeper']['days'] = daybox.day  # reassign with the current day
+        config_read['Time keeping']['day_last'] = daybox  # reassign the day_last key with today's date
+        config_read['Time keeping']['year'] = daybox.year  # reassign with the current year
+        config_read['Time keeping']['month'] = daybox.month  # reassign with the current month
+        config_read['Time keeping']['days'] = daybox.day  # reassign with the current day
         with open('Configurations.ini', 'w') as configfile:  # open the ini file for writing
             config_read.write(configfile)  # save changes
 
