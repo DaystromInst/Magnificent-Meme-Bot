@@ -6,6 +6,8 @@ import time
 import ImageGrab.py
 import configparser
 
+Snag = ImageGrab.ImageGrab(True)
+
 config_read = configparser.ConfigParser()
 
 TOKEN = 'NTA0Njk2Nzc3ODQ1NTA2MDc5.DrJBOg.4laYtgbGlZvuGPf8h5LLKbJxu5A'
@@ -14,6 +16,8 @@ client_id = 504696777845506079
 
 client = commands.Bot(command_prefix='!')  # client object
 # prefix character for issuing commands ie '!' when telling a music bot to !play
+# Follow this link to add the bot to a server:
+# https://discordapp.com/oauth2/authorize?client_id=504696777845506079&scope=bot
 
 
 @client.event
@@ -38,7 +42,7 @@ async def on_ready():  # runs code in function when the bot is ready
         with open('Configurations.ini', 'w') as configfile:  # open the ini file for writing
             config_read.write(configfile)  # save changes
 
-        ImageGrab.main2()  # time to shitpost
+        Snag.GetMeme()  # time to shitpost
 
     print('I am ready, my dudes. ')  # debug notification: bot is ready
 
