@@ -10,7 +10,7 @@ Snag = ImageGrab.ImageGrab(True)
 
 config_read = configparser.ConfigParser()
 
-TOKEN = 'NTA0Njk2Nzc3ODQ1NTA2MDc5.DrJBOg.4laYtgbGlZvuGPf8h5LLKbJxu5A'
+TOKEN = ''
 
 client_id = 504696777845506079
 
