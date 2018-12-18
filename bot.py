@@ -3,10 +3,10 @@ from discord.ext import commands
 import datetime
 from datetime import timedelta
 import time
-import ImageGrab.py
+import ImageGrab
 import configparser
 
-Snag = ImageGrab.ImageGrab(True)
+#Snag = ImageGrab()
 
 config_read = configparser.ConfigParser()
 
@@ -42,7 +42,7 @@ async def on_ready():  # runs code in function when the bot is ready
         with open('Configurations.ini', 'w') as configfile:  # open the ini file for writing
             config_read.write(configfile)  # save changes
 
-        Snag.GetMeme()  # time to shitpost
+        ImageGrab.GetMeme()  # time to shitpost
 
     print('I am ready, my dudes. ')  # debug notification: bot is ready
 
